@@ -7,6 +7,8 @@ ruby '2.6.2'
 gem 'dotenv-rails', '>= 2.0.1' , groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+# rspec for unit testing
+gem "rspec-rails", :group => [:development, :test]
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
