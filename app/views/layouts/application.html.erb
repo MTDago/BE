@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsAssignment</title>
+    <title>BE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <header>
+  <div>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Search</li>
+        <li>Saved</li>
+        <li>My Profile</li>
+      </ul>
+    </nav>
+  </div>
+  </header>
     <%= yield %>
   </body>
 </html>
