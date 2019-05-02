@@ -10,15 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_051807) do
+ActiveRecord::Schema.define(version: 2019_05_02_043418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
   create_table "listings", force: :cascade do |t|
-    t.string "product_name"
-    t.float "product_price"
-    t.text "product_description"
+    t.string "product_name", null: false
+    t.float "product_price", null: false
+    t.text "product_description", null: false
     t.string "product_image"
     t.string "product_duration"
     t.string "order_status"
@@ -28,14 +40,24 @@ ActiveRecord::Schema.define(version: 2019_05_01_051807) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "user_name"
-    t.string "password"
+    t.string "user_name", null: false
     t.float "rating"
-    t.integer "postcode"
-    t.integer "phone"
+    t.integer "postcode", null: false
+    t.integer "phone", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
