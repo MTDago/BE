@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.2'
+ruby '2.5.1'
 
 #dotenv used for database password
 gem 'dotenv-rails', '>= 2.0.1' , groups: [:development, :test]
