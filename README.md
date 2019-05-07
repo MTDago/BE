@@ -24,4 +24,4 @@ Things you may want to cover:
 * ...
 
 ### What is the need (i.e. challenge) that you will be addressing in your project?
-The idea comes, less from extensive research or testing, but a need to have a formal way to trade tools, utilities, services, etc. It is up to the community to 
+The idea comes, less from extensive research or testing, but a need to have a formal way to trade tools, utilities, services, etc. It is up to the community to
