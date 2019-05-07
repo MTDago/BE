@@ -31,7 +31,12 @@
       <li><a href="#">Home</a></li>
       <li><a href="#">Search</a></li>
       <li><a href="#">Saved</a></li>
-      <li><a href="#">My Profile</a></li>
+      <li>
+      <% if !Profile.where(user: current_user).empty? %>
+        <%= link_to "My Profile", profile_path(current_user.id) %></li>
+        <% else %>
+        <%= link_to "My Profile", new_profile_path %>
+      <% end %>  
     </ul>
   </nav>
 
@@ -46,6 +51,9 @@
   <div id="main">
   <h1> 
   <% if user_signed_in? %>
+    <% if !Profile.where(user: current_user).empty? %>
+      <%= Profile.where(user: current_user)[0].user_name %>
+    <% end %>
     <%= current_user.email %>
   <% end %>
   </h1>
