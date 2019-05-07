@@ -1,3 +1,22 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+    width: 100%;
+}
+
+.field {
+    text-align: center;
+}
+
+a#List_link_homepage {
+    text-decoration: none;
+    padding: 5px;
+    text-align: start;
+    margin-left: 5px;
+}
+
+a#List_link_homepage:hover {
+    color: white;
+    background-color: orangered;
+}
