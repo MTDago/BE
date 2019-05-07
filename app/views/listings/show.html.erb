@@ -17,6 +17,7 @@
 
 <p>
   <strong>Lender:</strong>
+  <%= link_to "#{User.find(@listing.user_id).email}", listings_path %>
 </p>
 
 <p>
