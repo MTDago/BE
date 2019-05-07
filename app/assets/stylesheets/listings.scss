@@ -4,3 +4,19 @@
 table {
     width: 100%;
 }
+
+.field {
+    text-align: center;
+}
+
+a#List_link_homepage {
+    text-decoration: none;
+    padding: 5px;
+    text-align: start;
+    margin-left: 5px;
+}
+
+a#List_link_homepage:hover {
+    color: white;
+    background-color: orangered;
+}

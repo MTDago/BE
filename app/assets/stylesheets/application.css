@@ -13,41 +13,31 @@
  *= require_tree .
  *= require_self
  */
- header{
+ header {
     background:#35424A;
     color: #ffffff;
-    padding-top: 30px;
     min-height: 70px;
     border-bottom: #e8491d;
 }
 
- header li{
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header nav{
-    float: right;
-    margin-top: 10px;
-
-}
-
-header a:hover{
+header a:hover {
     color: #35424A;
-    font-weight: bold;
-    background-color: lightblue;
-    border-radius: 20%;
+    transform: scale(.8); opacity: 0.9; font-size: 150%; 
+    transition: 0.7s;
+    background-color: lightblue;    
 }
 
-header a{
+h1 {
+    margin-left: 10px;
+}
+header a {
     color: lightblue;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
 }
 
-body{
+body {
     font-family: Raleway, sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -56,10 +46,83 @@ body{
     background-color: #f4f4f4;
 }
 
-footer{
+.navbar {
+    background-color: #3b5998;
+    overflow: hidden;
+    height: 63px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 18px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar ul {
+    margin: 8px 0 0 0;
+    list-style: none;
+}
+
+.navbar a:hover {
+    background-color: #f2f2f2;
+    color: #3b5998;
+
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: #fff;
+}
+
+.side-nav .close-butn {
+    position: absolute;
+    top:0;
+    right:22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+footer {
     padding: 20px;
     color: white;
-    background-color: skyblue;
+    background-color: orangered;
     text-align: center;
     margin-top: 20px;
+}
+
+#main{
+    transition: margin-left 0.5s;
+    padding: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#main h1{
+    margin-left: 0px;
 }
