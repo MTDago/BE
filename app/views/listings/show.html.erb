@@ -1,39 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product name:</strong>
-  <%= @listing.product_name %>
+  <strong>Title:</strong>
+  <%= @listing.title %>
 </p>
 
 <p>
-  <strong>Product price:</strong>
-  <%= @listing.product_price %>
+  <strong>Description:</strong>
+  <%= @listing.description %>
 </p>
 
 <p>
-  <strong>Product description:</strong>
-  <%= @listing.product_description %>
+  <strong>Price:</strong>
+  <%= @listing.price %>
 </p>
 
 <p>
-  <strong>Product image:</strong>
-  <%= @listing.product_image %>
+  <strong>Image:</strong>
+  <%= @listing.image %>
 </p>
 
 <p>
-  <strong>Product duration:</strong>
-  <%= @listing.product_duration %>
+  <strong>Status:</strong>
+  <%= @listing.status %>
 </p>
-
-<p>
-  <strong>Order status:</strong>
-  <%= @listing.order_status %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @listing.user_name %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<% if user_signed_in? && @listing.user == current_user %>
+  <%= link_to 'Edit', edit_listing_path(@listing) %>
+<% end  %>
 <%= link_to 'Back', listings_path %>

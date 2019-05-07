@@ -1,3 +1,3 @@
 class Listing < ApplicationRecord
-    belongs_to :user, foreign_key: "user_name"
+    belongs_to :user
 end
