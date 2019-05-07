@@ -2,7 +2,7 @@
 
 <h1>Listings</h1>
 
-<% if current_user %>
+<% if user_signed_in? %>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Sign up', new_user_registration_path %>
@@ -27,11 +27,12 @@
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
-        <td><%= listing.image %></td>
         <td><%= listing.status %></td>
         <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? && current_user == listing.user %>
+          <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+          <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
