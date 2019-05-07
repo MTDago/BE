@@ -18,7 +18,7 @@
 
   <nav class="navbar">
     <span class="open-menu">
-      <a href="#" onclick="openSideMenu()">
+      <a onclick="openSideMenu()">
         <svg width="30" height="30">
           <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
           <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
@@ -36,7 +36,7 @@
   </nav>
 
   <div id="side-menu" class="side-nav">
-    <a href="#" class="close-butn" onclick="closeSideMenu()">&times;</a>
+    <a class="close-butn" onclick="closeSideMenu()">&times;</a>
       <a href="#">Home</a>
       <a href="#">Search</a>
       <a href="#">Saved</a>
@@ -44,7 +44,19 @@
   </div>
 
   <div id="main">
-  <h1>Username</h1>
+  <h1> 
+  <% if user_signed_in? %>
+    <%= current_user.email %>
+  <% end %>
+  </h1>
+    <div id="sign-uio">
+    <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+    </div>
   </div>
 
   <script>
