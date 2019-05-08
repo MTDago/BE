@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :check_profile, only: [:new]
   # GET /listings
   # GET /listings.json
   def index
@@ -72,5 +73,28 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:title, :description, :price, :image, :status)
+    end
+
+    def check_profile
+      profile_to_check = Profile.find(current_user.id)
+      has_details = true
+      flash[:notice] = ""
+      if profile_to_check.user_name == nil
+        has_details = false
+        flash[:notice] << "Username required to make a listing. "
+      end
+      if profile_to_check.phone == nil
+        has_details = false
+        flash[:notice] << "Phone number required to make a listing. "
+      end
+      if profile_to_check.postcode == nil
+        has_details = false
+        flash[:notice] << "Postcode required to make a listing. "
+      end
+      if has_details == false
+        redirect_to edit_profile_path(profile_to_check)
+      else
+        flash[:notice] = nil
+      end
     end
 end
