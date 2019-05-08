@@ -4,12 +4,13 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.search(params[:term])
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @profile = Profile.where(user_id: @listing.user_id)
   end
 
   # GET /listings/new
