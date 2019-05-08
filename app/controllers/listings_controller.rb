@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @profile = Profile.where(user_id: @listing.user_id)
+    @profile = Profile.where(user_id: @listing.user_id)[0]
   end
 
   # GET /listings/new
