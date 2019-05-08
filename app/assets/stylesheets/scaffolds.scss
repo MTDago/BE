@@ -21,14 +21,21 @@ pre {
 
 a {
   color: #000;
+  text-decoration: none;
+  padding: 5px;
+  text-align: start;
+  margin-left: 5px;
 
   &:visited {
-    color: lightblue;
+    color: black;
+    background-color: #3b5998;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: white;
+    background-color: orangered;
+    transform: scale(0.8);
+    transition: 0.5s;
   }
 }
 

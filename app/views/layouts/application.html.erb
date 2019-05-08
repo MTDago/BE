@@ -11,10 +11,6 @@
 
   <body>
   <header>
-  <div id=devise_notifications>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
 
   <nav class="navbar">
     <span class="open-menu">
@@ -80,6 +76,10 @@
       document.getElementById('main').style.marginLeft = '0';
     }
   </script>
+  <div id=devise_notifications>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
   </header>
     <%= yield %>
     <footer>
