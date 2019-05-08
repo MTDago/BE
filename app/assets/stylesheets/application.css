@@ -24,7 +24,7 @@ header a:hover {
     color: #35424A;
     transform: scale(.8); opacity: 0.9; font-size: 150%; 
     transition: 0.7s;
-    background-color: lightblue;    
+    background-color: lightblue;
 }
 
 h1 {
@@ -134,8 +134,4 @@ footer {
     float: right;
     margin-right: 30px;
     margin-top: 30px;
-}
-
-#devise-notifications p.notice {
-    text-decoration: none;
 }

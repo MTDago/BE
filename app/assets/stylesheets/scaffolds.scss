@@ -27,13 +27,15 @@ a {
   margin-left: 5px;
 
   &:visited {
-    color: lightblue;
+    color: black;
     background-color: #3b5998;
   }
 
   &:hover {
-    color: black;
+    color: white;
     background-color: orangered;
+    transform: scale(0.8);
+    transition: 0.5s;
   }
 }
 
