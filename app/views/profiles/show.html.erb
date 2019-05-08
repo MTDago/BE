@@ -17,7 +17,11 @@
 
 <p>
   <strong>Rating:</strong>
-  <%= @profile.rating %>
+  <% if @profile.rating_no == 0 %>
+    <%= "no ratings exist" %>
+  <% else %>
+    <%= @profile.rating %>
+  <% end %>
 </p>
 
 <p>
