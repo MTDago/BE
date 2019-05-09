@@ -22,8 +22,8 @@
 
 header a:hover {
     color: #35424A;
-    transform: scale(.8); opacity: 0.9; font-size: 150%; 
-    transition: 0.7s;
+    transform: opacity(0.9); 
+    transition: 0.4s;
     background-color: lightblue;
 }
 
@@ -44,6 +44,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: #f4f4f4;
+    overflow: hidden;
 }
 
 .navbar {
@@ -56,7 +57,7 @@ body {
 
 .navbar a {
     float: left;
-    display: block;
+    display: flex;
     text-align: center;
     color: #f2f2f2;
     padding: 18px 16px;
@@ -111,11 +112,11 @@ body {
 }
 
 footer {
-    padding: 20px;
+    padding: 10px;
     color: white;
     background-color: orangered;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #main {
@@ -123,15 +124,65 @@ footer {
     padding: 10px;
     overflow: hidden;
     width: 100%;
+    max-height: 50px;
 }
 
 #main h1 {
-    margin-left: 0px;
+    margin: 5px;
     float: left;
 }
 
-#sign-uio {
+#main a {
+    color: white;
+}
+
+#main a:hover {
+    background-color: #3b5998;
+}
+
+.sign {
     float: right;
     margin-right: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+.sign:visited {
+    color: white;
+}
+
+#devise_notifications p.notice {
+    text-decoration: none;
+    line-height: 10%;
+}
+
+#devise_notifications {
+    max-height: 26px;
+    margin-left: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: inline-table;
+    width: 100%;
+    margin-left: 1%;
+    font-variant-caps: all-petite-caps;
+    font-size: 100%;
+}
+
+table {
+    text-align: left;
+    margin-left: 1%;
+}
+
+table td {
+    font-variant-caps: all-petite-caps;
+    font-size: 110%;
+}
+
+table th{
+    font-size: 160%;
 }
