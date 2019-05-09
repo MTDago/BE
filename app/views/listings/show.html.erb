@@ -14,11 +14,6 @@
 </p>
 
 <p>
-  <strong>Lender:</strong>
-  <%= link_to "#{User.find(@listing.user_id).email}", listings_path %>
-</p>
-
-<p>
   <strong>Image:</strong>
   <%= @listing.image %>
 </p>
@@ -27,6 +22,18 @@
   <strong>Status:</strong>
   <%= @listing.status %>
 </p>
+
+<div id:"lender_profile">
+  <ul>
+    <li><%= link_to "#{User.find(@listing.user_id).email}", listings_path %></li>
+    <li><%= @profile.user_name %></li>
+    <li><%= @profile.phone %></li>
+    <% if !@profile.rating_no == 0 %>
+      <li><%= @profile.rating %></li>
+    <% end %>
+  </ul>
+</div>
+
 <% if user_signed_in? && @listing.user == current_user %>
   <%= link_to 'Edit', edit_listing_path(@listing) %>
 <% end  %>
