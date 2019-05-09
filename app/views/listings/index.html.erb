@@ -1,14 +1,5 @@
 
-<h1>Home</h1>
-
-<p id="notice"><%= notice %></p>
-
 <h1>Listings</h1>
-
-<%= form_tag(listings_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term] %>
-  <%= submit_tag 'Search', title: nil %>
-<% end %>
 
 <table>
   <thead>

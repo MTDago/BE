@@ -30,6 +30,13 @@ header a:hover {
 h1 {
     margin-left: 10px;
 }
+
+h1#username {
+    margin: 5px;
+    display: inline-block;
+    margin-top: 16px;
+}
+
 header a {
     color: lightblue;
     text-decoration: none;
@@ -119,7 +126,7 @@ footer {
     margin-top: 10px;
 }
 
-#main {
+.navbar-nav#main {
     transition: margin-left 0.5s;
     padding: 10px;
     overflow: hidden;
@@ -127,26 +134,22 @@ footer {
     max-height: 50px;
 }
 
-#main h1 {
-    margin: 5px;
-    float: left;
-}
-
-#main a {
+#main .sign a {
     color: white;
+    margin-top: -16px;
 }
 
-#main a:hover {
+#main .sign a:hover {
     background-color: #3b5998;
 }
 
-.sign {
+#main .sign {
     float: right;
     margin-right: 30px;
     margin-top: 20px;
 }
 
-.sign:visited {
+#main .sign:visited {
     color: white;
 }
 
@@ -185,4 +188,10 @@ table td {
 
 table th{
     font-size: 160%;
+}
+
+form {
+    display: inline-flexbox;
+    margin-left: 250px;
+    margin-top: -32px;
 }
