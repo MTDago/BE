@@ -23,7 +23,7 @@
   <%= @listing.status %>
 </p>
 
-<div id:"lender_profile">
+<div id="lender_profile">
   <ul>
     <li><%= link_to "#{User.find(@listing.user_id).email}", listings_path %></li>
     <li><%= @profile.user_name %></li>
@@ -33,6 +33,12 @@
     <% end %>
   </ul>
 </div>
+
+<% if user_signed_in? && @listing.user != current_user %>
+  <div id="rent_button">
+    <%= link_to "RENT NOW", controller: 'order', action: 'show', id: @listing.id %>
+  </div>
+<% end %>
 
 <% if user_signed_in? && @listing.user == current_user %>
   <%= link_to 'Edit', edit_listing_path(@listing) %>
