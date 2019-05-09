@@ -45,7 +45,7 @@
     <%= current_user.email %>
   <% end %>
   </h1>
-    <div id="sign-uio">
+    <div class="sign">
     <% if user_signed_in? %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     <% else %>
@@ -76,7 +76,7 @@
     <%= yield %>
     <footer>
         <p>BE, Copyright &copy; 2019</p>
-        <p>Michael Twitt & Matthew Leacy</p>
+        <p>Matthew Leacy & Michael Twitt</p>
     </footer>
   </body>
 </html>
