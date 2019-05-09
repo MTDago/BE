@@ -23,44 +23,41 @@
       </a>
     </span>
 
-    <ul class="navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Search</a></li>
-      <li><a href="#">Saved</a></li>
-      <li>
-      <% if !Profile.where(user: current_user).empty? %>
-        <%= link_to "My Profile", profile_path(current_user.id) %></li>
-        <% else %>
-        <%= link_to "My Profile", new_profile_path %>
-      <% end %>  
-    </ul>
+    <div class="navbar-nav">
+      <div id="main">
+      <h1 id="username"> 
+      <% if user_signed_in? %>
+      <% if Profile.where(user: current_user)[0].user_name != nil %>
+      <%= Profile.where(user: current_user)[0].user_name %>
+      <% else %>
+      <%= current_user.email %>
+      <% end %>
+      <% end %>
+      </h1>
+      <div class="sign">
+      <% if user_signed_in? %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to 'Sign in', new_user_session_path %>
+      <% end %>
+      </div>
+      </div>
+      <%= form_tag(listings_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term], placeholder: "Enter Keyword" %>
+      <%= submit_tag 'Search', title: nil %>
+      <% end %> 
+    </div>
   </nav>
 
   <div id="side-menu" class="side-nav">
     <a class="close-butn" onclick="closeSideMenu()">&times;</a>
-      <a href="#">Home</a>
-      <a href="#">Search</a>
-      <a href="#">Saved</a>
-      <a href="#">My Profile</a>
-  </div>
-
-  <div id="main">
-  <h1> 
-  <% if user_signed_in? %>
-    <% if !Profile.where(user: current_user).empty? %>
-      <%= Profile.where(user: current_user)[0].user_name %>
-    <% end %>
-    <%= current_user.email %>
-  <% end %>
-  </h1>
-    <div class="sign">
-    <% if user_signed_in? %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-    </div>
+      <%= link_to "Home", listings_path %>
+      <% if !Profile.where(user: current_user).empty? %>
+        <%= link_to "My Profile", profile_path(current_user.id) %></li>
+        <% else %>
+        <%= link_to "My Profile", new_profile_path %>
+      <% end %>
   </div>
 
   <script>
@@ -76,11 +73,13 @@
       document.getElementById('main').style.marginLeft = '0';
     }
   </script>
-  <div id=devise_notifications>
+
+  <div id=devise_notifications> 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
   </header>
+
     <%= yield %>
     <footer>
         <p>BE, Copyright &copy; 2019</p>
