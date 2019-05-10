@@ -29,6 +29,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.status = "available"
     @listing.user = current_user
+    @listing.title = @listing.title.downcase
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }

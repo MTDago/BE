@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
 
     def self.search(term)
         if term
-          where('title LIKE ?', "%#{term}%").order('id DESC')
+          where('title LIKE ?', "%#{term.downcase}%").order('id DESC')
         else
           order('id DESC') 
         end
