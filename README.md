@@ -57,7 +57,7 @@ The views are directly connected to the display of the application on the webpag
 #### Controller
 The controller receives instructions from the user via routes and communicates with the relevant model if necessary, regardless it communicates back to the user via rendering views.
 
-###User Stories
+### User Stories
 
 All users should be able to:
 Register 
@@ -85,4 +85,9 @@ Delete users
 View a list of all orders 
 
 ### Wireframes
-
+!["edit listing"](./docs/edit_listing_wireframe)
+!["home"](./docs/home_wireframe)
+!["show listing"](./docs/show_listing_wireframe)
+!["side menu"](./docs/side_menu_wireframe)
+!["sign up"](./docs/sign_up_wireframe)
+!["sign in"](./docs/sign_in_wireframe)
