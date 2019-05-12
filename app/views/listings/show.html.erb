@@ -23,6 +23,7 @@
   <%= @listing.status %>
 </p>
 
+<!-- Find the profile of the original poster -->
 <div id="lender_profile">
   <ul>
     <li><%= link_to "#{User.find(@listing.user_id).email}", listings_path %></li>
@@ -34,12 +35,14 @@
   </ul>
 </div>
 
+<!-- If the current user is signed in and viewing another user's listing, they have the option to rent the product -->
 <% if user_signed_in? && @listing.user != current_user %>
   <div id="rent_button">
     <%= link_to "RENT NOW", controller: 'order', action: 'show', id: @listing.id %>
   </div>
 <% end %>
 
+<!-- If the current user is the original poster, they have the option to edit -->
 <% if user_signed_in? && @listing.user == current_user %>
   <%= link_to 'Edit', edit_listing_path(@listing) %>
 <% end  %>
