@@ -17,7 +17,7 @@ Tasks were allocated through group discussion with time constraints and team mem
 This ties into how the tasks were allocated in the beginning. Each time a task was completed, we’d discuss what remained and what could be done with the time left that day. An informal approach and it relies on clear communication and discipline to do strictly what we had committed to do.
 
 ### Team communication 
-The team communicated by slack and kept track of allocated tasks via trello.
+The team communicated by slack and kept track of allocated tasks via trello. https://trello.com/b/47PIiFMN/assessment
 
 **INSERT TRELLO SCREENSHOT HERE**
 

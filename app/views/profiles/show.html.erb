@@ -26,11 +26,11 @@
   <strong>Email:</strong>
   <%= @profile.user.email %>
 </p>
-
+<!-- Allows the user to edit their own profile -->
 <% if user_signed_in? && current_user == @profile.user %>
   <%= link_to 'Edit', edit_profile_path(@profile) %> 
 <% end %>
-
+<!-- If the user is an authorised admin they have the option to delete or edit other users profile -->
 <% if current_user.admin == true %>
   <%= link_to 'Edit', edit_profile_path(@profile) %> 
   <%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
