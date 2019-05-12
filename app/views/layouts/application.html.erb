@@ -43,10 +43,12 @@
       <% end %>
       </div>
       </div>
+      <div id="search">
       <%= form_tag(listings_path, method: :get) do %>
       <%= text_field_tag :term, params[:term], placeholder: "Enter Keyword" %>
       <%= submit_tag 'Search', title: nil %>
       <% end %> 
+      </div>
     </div>
   </nav>
 
