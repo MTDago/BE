@@ -19,7 +19,7 @@ This ties into how the tasks were allocated in the beginning. Each time a task w
 ### Team communication 
 The team communicated by slack and kept track of allocated tasks via trello. https://trello.com/b/47PIiFMN/assessment
 
-**INSERT TRELLO SCREENSHOT HERE**
+!["Trello"](./docs/trello.png)
 
 ### Data structure of similar apps
 While there are a lot of variations amongst other similar apps, they tend to follow the same basic structure. They contain a table of users with relates to a table of listings in a one to many relationship. Often they contain a shopping cart that can only be assumed to be contained in a table of shopping carts with a one to one relationship with the users table.
@@ -85,9 +85,9 @@ Delete users
 View a list of all orders 
 
 ### Wireframes
-!["edit listing"](./docs/edit_listing_wireframe)
-!["home"](./docs/home_wireframe)
-!["show listing"](./docs/show_listing_wireframe)
-!["side menu"](./docs/side_menu_wireframe)
-!["sign up"](./docs/sign_up_wireframe)
-!["sign in"](./docs/sign_in_wireframe)
+!["edit listing"](./docs/edit_listing_wireframe.png)
+!["home"](./docs/home_wireframe.png)
+!["show listing"](./docs/show_listing_wireframe.png)
+!["side menu"](./docs/side_menu_wireframe.png)
+!["sign up"](./docs/sign_up_wireframe.png)
+!["sign in"](./docs/sign_in_wireframe.png)
