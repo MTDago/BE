@@ -51,7 +51,8 @@ body {
     padding: 0;
     margin: 0;
     background-color: #f4f4f4;
-    overflow: hidden;
+    overflow: scroll;
+    width: 100vw;
 }
 
 .navbar {
@@ -130,7 +131,7 @@ footer {
     transition: margin-left 0.5s;
     padding: 10px;
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
     max-height: 50px;
 }
 
@@ -170,7 +171,7 @@ footer {
 
 p {
     display: inline-table;
-    width: 100%;
+    width: 100vw;
     margin-left: 1%;
     font-variant-caps: all-petite-caps;
     font-size: 100%;
@@ -179,15 +180,16 @@ p {
 table {
     text-align: left;
     margin-left: 1%;
+    width: 50vw;
 }
 
 table td {
     font-variant-caps: all-petite-caps;
-    font-size: 110%;
+    font-size: 80%;
 }
 
 table th{
-    font-size: 160%;
+    font-size: 80%;
 }
 
 #search form{

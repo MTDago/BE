@@ -7,11 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
   </head>
 
   <body>
   <header>
-
+<!-- Sidebar top left button -->
   <nav class="navbar">
     <span class="open-menu">
       <a onclick="openSideMenu()">
@@ -22,7 +23,7 @@
         </svg>
       </a>
     </span>
-
+<!-- Main Banner -->
     <div class="navbar-nav">
       <div id="main">
       <h1 id="username"> 
@@ -43,6 +44,7 @@
       <% end %>
       </div>
       </div>
+      <!-- Search bar in the banner -->
       <div id="search">
       <%= form_tag(listings_path, method: :get) do %>
       <%= text_field_tag :term, params[:term], placeholder: "Enter Keyword" %>
@@ -55,13 +57,15 @@
   <div id="side-menu" class="side-nav">
     <a class="close-butn" onclick="closeSideMenu()">&times;</a>
       <%= link_to "Home", listings_path %>
+      <!-- If the user is currently signed in, clicking the My Profile button will take them to their own profile page -->
+      <!-- Else the user is prompted to create a new profile -->
       <% if !Profile.where(user: current_user).empty? %>
         <%= link_to "My Profile", profile_path(current_user.id) %></li>
         <% else %>
         <%= link_to "My Profile", new_profile_path %>
       <% end %>
   </div>
-
+<!-- Functions to control the side menu movement/display -->
   <script>
     function openSideMenu() {
       document.getElementById('side-menu').style.width = '250px';
@@ -75,7 +79,7 @@
       document.getElementById('main').style.marginLeft = '0';
     }
   </script>
-
+<!-- Alerts and Notifications -->
   <div id=devise_notifications> 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -83,6 +87,7 @@
   </header>
 
     <%= yield %>
+    <!-- Copyright and Credit -->
     <footer>
         <p>BE, Copyright &copy; 2019</p>
         <p>Matthew Leacy & Michael Twitt</p>

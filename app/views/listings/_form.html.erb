@@ -1,3 +1,4 @@
+<!-- Provides constructive feedback -->
 <%= form_with(model: listing, local: true) do |form| %>
   <% if listing.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +12,7 @@
     </div>
   <% end %>
 
+  <!-- Fields of the form -->
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, placeholder: "Title"%>
@@ -29,6 +31,7 @@
   <div class="field">
     <%= form.label :image %>
     <%= form.text_field :image, placeholder: "Enter image URL"%>
+  <!-- The Javascript program that allows the user to upload and store pictures for their listings in our app using Cloudinary. -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <div class="card">
     <img src="../app/assets/images/portrait.jpg" id="image-preview">
@@ -55,7 +58,7 @@
           data: formData
         }).then(function(res) {
           console.log(res);
-          imgPreview.src = res.data.secure_url
+          imgPreview.src = res.data.secure_url;
         }).then(function(err) {
           console.log(err);
         });
@@ -63,6 +66,8 @@
       </script>
     </div>
   </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
