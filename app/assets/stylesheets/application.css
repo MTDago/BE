@@ -190,7 +190,7 @@ table th{
     font-size: 160%;
 }
 
-form {
+#search form{
     display: inline-flexbox;
     margin-left: 250px;
     margin-top: -32px;
