@@ -26,12 +26,13 @@
     <%= form.text_field :price, placeholder: "Price per day" %>
   </div>
 
-  <div class="field">
+  <div class="field" id="image_field">
     <%= form.label :image %>
-    <%= form.text_field :image, placeholder: "Enter image URL"%>
+    <%= form.text_field :image %>
+  </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <div class="card">
-    <img src="../app/assets/images/portrait.jpg" id="image-preview">
+    <img src="<%= :image %>" id="image-preview">
     <label class="image-upload-container" for="image-upload">
       <input id="image-upload" type="file" style="display:none;"> Select an Image </label>
       <script>
@@ -39,6 +40,7 @@
       var CLOUDINARY_UPLOAD_PRESET = 'p0ialzu3';
       var imgPreview = document.getElementById('image-preview');
       var imgUpload = document.getElementById('image-upload');
+      var imageUrlField = document.getElementById('listing_image');
 
       imgUpload.addEventListener('change', function(event) {
         var file = event.target.files[0];
@@ -55,14 +57,15 @@
           data: formData
         }).then(function(res) {
           console.log(res);
-          imgPreview.src = res.data.secure_url
+          imgPreview.src = res.data.secure_url;
         }).then(function(err) {
           console.log(err);
         });
+        imageUrlField.val = imgPreview.src;
       });
       </script>
-    </div>
   </div>
+  
 
   <div class="actions">
     <%= form.submit %>
