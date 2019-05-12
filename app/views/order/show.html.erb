@@ -1,0 +1,14 @@
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @listing.price %>
+</p>
+
+<%= form_with(controller: 'order', action: 'new', listing_id: @listing.id, method: 'post') do |form|%>
+    <%= form.number_field :duration, value: 1 %>
+    <div><%= submit_tag 'Order' %></div>
+<% end %>
