@@ -27,12 +27,10 @@ While there are a lot of variations amongst other similar apps, they tend to fol
 ### Database relationships and schema discussion
 When it came to implementing a database that would be sufficient for the tasks required, a lot of thought was put into the tables that would be included and their relationships. Below a relational diagram details the tables and connections that exist within the database.
 
-** INSERT ERD HERE **
-
+![ERD](./docs/ERD.png)
 As can be seen in the diagram there are a number of relations present in the database. The active records relations were outlined in the models as follows. User: has one profile, has many listings, has many orders. Listing: belongs to user. Profile: belongs to user. Order: belongs to user. 
 
-**INSERT SCHEMA HERE** 
-
+![schema](./docs/schema.png)
 ### Discuss methods you will use to protect information and data.
 The only sensitive data stored in the app are the email and password required for a user to login and a users phone number and postcode required for making a listing. Devise automatically encrypts the password ensuring secure storage. User emails, phone numbers and postcodes are only available to users who are logged in and have requested to see the information of the owner of a particular listing.
 
